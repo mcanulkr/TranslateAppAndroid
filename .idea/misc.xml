@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../layout/custom_preview.xml" value="0.20717948717948717" />
+        <entry key="app/src/main/res/drawable-v24/ic_baseline_dehaze_24.xml" value="0.2082051282051282" />
+        <entry key="app/src/main/res/drawable-v24/ic_compare_arrow.xml" value="0.2082051282051282" />
+        <entry key="app/src/main/res/drawable-v24/ic_mic.xml" value="0.2082051282051282" />
+        <entry key="app/src/main/res/drawable-v24/ic_right_arrow.xml" value="0.2082051282051282" />
+        <entry key="app/src/main/res/drawable-v24/stroke.xml" value="0.2082051282051282" />
+        <entry key="app/src/main/res/drawable-v24/stroke_2.xml" value="0.2082051282051282" />
+        <entry key="app/src/main/res/drawable/background.xml" value="0.22" />
+        <entry key="app/src/main/res/drawable/background_bottom.xml" value="0.21145833333333333" />
+        <entry key="app/src/main/res/drawable/button_apple_design.xml" value="0.21145833333333333" />
+        <entry key="app/src/main/res/drawable/button_design.xml" value="0.2082051282051282" />
+        <entry key="app/src/main/res/drawable/button_google_design.xml" value="0.21145833333333333" />
+        <entry key="app/src/main/res/drawable/card_view_background.xml" value="0.2074074074074074" />
+        <entry key="app/src/main/res/drawable/circle_button.xml" value="0.21145833333333333" />
+        <entry key="app/src/main/res/drawable/edit_text_design.xml" value="0.25" />
+        <entry key="app/src/main/res/drawable/ic_account.xml" value="0.21145833333333333" />
+        <entry key="app/src/main/res/drawable/ic_baseline_history_24.xml" value="0.21145833333333333" />
+        <entry key="app/src/main/res/drawable/ic_change_language.xml" value="0.2074074074074074" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2074074074074074" />
+        <entry key="app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.2082051282051282" />
+        <entry key="app/src/main/res/drawable/ic_send.xml" value="0.21145833333333333" />
+        <entry key="app/src/main/res/drawable/ic_translate.xml" value="0.21145833333333333" />
+        <entry key="app/src/main/res/drawable/side_nav_bar.xml" value="0.2082051282051282" />
+        <entry key="app/src/main/res/layout-v23/fragment_home.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/activity_chat.xml" value="0.1953125" />
+        <entry key="app/src/main/res/layout/activity_log_in.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1675925925925926" />
+        <entry key="app/src/main/res/layout/activity_sign_in.xml" value="0.21" />
+        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/app_bar_main.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/content_main.xml" value="0.1953125" />
+        <entry key="app/src/main/res/layout/fragment_exit.xml" value="0.1953125" />
+        <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.1953125" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.16" />
+        <entry key="app/src/main/res/layout/fragment_messages.xml" value="0.1953125" />
+        <entry key="app/src/main/res/layout/fragment_old_translates.xml" value="0.1953125" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.16" />
+        <entry key="app/src/main/res/layout/fragment_slideshow.xml" value="0.1953125" />
+        <entry key="app/src/main/res/layout/my_message.xml" value="0.1953125" />
+        <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.1953125" />
+        <entry key="app/src/main/res/layout/old_translates_item.xml" value="0.1953125" />
+        <entry key="app/src/main/res/layout/other_message.xml" value="0.1953125" />
+        <entry key="app/src/main/res/layout/search_user_item.xml" value="0.1953125" />
+        <entry key="app/src/main/res/layout/spinner_item.xml" value="0.1953125" />
+        <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.1953125" />
+        <entry key="app/src/main/res/menu/main.xml" value="0.1953125" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1953125" />
+      </ProjectState>
+    </option>
+  </component>
+</project>

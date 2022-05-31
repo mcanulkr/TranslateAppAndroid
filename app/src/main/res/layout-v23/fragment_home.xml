@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.home.HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:weightSum="3">
+
+        <Spinner
+            android:id="@+id/mainLangue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:background="@drawable/edit_text_design"
+            android:backgroundTint="#F3F3F3"
+            android:textAlignment="center" />
+
+        <ImageView
+            android:id="@+id/changeHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.6"
+            android:src="@drawable/ic_compare_arrow" />
+
+        <Spinner
+            android:id="@+id/toLangue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:background="@drawable/edit_text_design"
+            android:backgroundTint="#F3F3F3"
+            android:textAlignment="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="80dp"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <EditText
+            android:id="@+id/sourceText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="10dp"
+            android:ems="10"
+            android:textSize="17sp"
+            android:gravity="start"
+            android:hint="Çevrilecek Metin..."
+            android:importantForAutofill="no"
+            android:inputType="textMultiLine|textImeMultiLine"
+            android:padding="10dp"
+            android:background="@null"
+            android:textStyle="bold"
+            android:textColor="@color/text_color"
+            android:textColorHint="#919191"/>
+
+        <EditText
+            android:id="@+id/resultText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/edit_text_design"
+            android:gravity="start"
+            android:hint="Çevrilen Metin"
+            android:padding="20dp"
+            android:textColor="@color/text_color"
+            android:textColorHint="#808080"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:background="@drawable/card_view_background"
+        android:backgroundTint="#ECECEC">
+
+        <ImageButton
+            android:id="@+id/translate"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_marginVertical="20dp"
+            android:background="@drawable/circle_button"
+            android:scaleType="center"
+            android:src="@drawable/ic_translate" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/circle_button"
+            android:backgroundTint="#D3D3D3"
+            android:padding="20dp"
+            android:src="@drawable/ic_camera" />
+
+        <ImageView
+            android:id="@+id/mic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="30dp"
+            android:background="@drawable/circle_button"
+            android:backgroundTint="#D3D3D3"
+            android:padding="20dp"
+            android:src="@drawable/ic_mic" />
+    </RelativeLayout>
+</RelativeLayout>
