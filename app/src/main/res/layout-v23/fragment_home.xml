@@ -17,27 +17,35 @@
         android:gravity="center_vertical"
         android:weightSum="3">
 
-        <Spinner
-            android:id="@+id/mainLangue"
+        <TextView
+            android:id="@+id/mainLanguage"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1.2"
+            android:text="Türkçe"
+            android:textColor="@color/background"
+            android:textStyle="bold"
+            android:paddingVertical="10dp"
             android:background="@drawable/edit_text_design"
             android:backgroundTint="#F3F3F3"
             android:textAlignment="center" />
 
         <ImageView
-            android:id="@+id/changeHorizontal"
+            android:id="@+id/changeLanguage"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.6"
             android:src="@drawable/ic_compare_arrow" />
 
-        <Spinner
-            android:id="@+id/toLangue"
+        <TextView
+            android:id="@+id/toLanguage"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1.2"
+            android:text="English"
+            android:textColor="@color/background"
+            android:textStyle="bold"
+            android:paddingVertical="10dp"
             android:background="@drawable/edit_text_design"
             android:backgroundTint="#F3F3F3"
             android:textAlignment="center" />

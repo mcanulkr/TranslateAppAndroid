@@ -4,6 +4,17 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../layout/custom_preview.xml" value="0.20717948717948717" />
+        <entry key="..\:/Users/canul/Desktop/TranslateAppAndroid/app/src/main/res/drawable/bottom_sheet_top.xml" value="0.202" />
+        <entry key="..\:/Users/canul/Desktop/TranslateAppAndroid/app/src/main/res/drawable/ic_germany.xml" value="0.202" />
+        <entry key="..\:/Users/canul/Desktop/TranslateAppAndroid/app/src/main/res/drawable/ic_spain.xml" value="0.202" />
+        <entry key="..\:/Users/canul/Desktop/TranslateAppAndroid/app/src/main/res/drawable/ic_translate.xml" value="0.202" />
+        <entry key="..\:/Users/canul/Desktop/TranslateAppAndroid/app/src/main/res/drawable/ic_turkey.xml" value="0.202" />
+        <entry key="..\:/Users/canul/Desktop/TranslateAppAndroid/app/src/main/res/layout-v23/fragment_home.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/canul/Desktop/TranslateAppAndroid/app/src/main/res/layout/app_bar_main.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/canul/Desktop/TranslateAppAndroid/app/src/main/res/layout/bottom_sheet_languages.xml" value="0.2" />
+        <entry key="..\:/Users/canul/Desktop/TranslateAppAndroid/app/src/main/res/layout/content_main.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/canul/Desktop/TranslateAppAndroid/app/src/main/res/layout/fragment_exit.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/canul/Desktop/TranslateAppAndroid/app/src/main/res/layout/fragment_home.xml" value="0.17074275362318841" />
         <entry key="app/src/main/res/drawable-v24/ic_baseline_dehaze_24.xml" value="0.2082051282051282" />
         <entry key="app/src/main/res/drawable-v24/ic_compare_arrow.xml" value="0.2082051282051282" />
         <entry key="app/src/main/res/drawable-v24/ic_mic.xml" value="0.2082051282051282" />

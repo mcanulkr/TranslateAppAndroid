@@ -1,13 +1,14 @@
 package com.example.navigationdrawer.ui.home
 
+import android.app.Dialog
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.speech.RecognizerIntent
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -22,6 +23,7 @@ import com.google.firebase.ml.common.modeldownload.FirebaseModelDownloadConditio
 import com.google.firebase.ml.naturallanguage.FirebaseNaturalLanguage
 import com.google.firebase.ml.naturallanguage.translate.FirebaseTranslateLanguage
 import com.google.firebase.ml.naturallanguage.translate.FirebaseTranslatorOptions
+import kotlinx.android.synthetic.main.bottom_sheet_languages.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import java.util.*
 
@@ -60,39 +62,28 @@ class HomeFragment : Fragment() {
         binding.resultText.visibility = View.GONE
 
         // Xml dosyasındaki id'ler eşleştirilir
-        mainLanguageSpinner = binding.mainLangue
-        toLanguageSpinner = binding.toLangue
         val microphone = binding.mic
         val translateButton = binding.translate
         resultText = binding.resultText
         sourceText = binding.sourceText
 
-        //Çevrilen dil seçim işlemi
-        mainLanguageSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                mainLanguageCode = getLanguageCode(fromLanguageList[p2])
+        binding.changeLanguage.setOnClickListener {
+            val firstLanguage = binding.mainLanguage.text.toString()
+            val secondLanguage = binding.toLanguage.text.toString()
+
+            binding.mainLanguage.setText(secondLanguage)
+            binding.toLanguage.setText(firstLanguage)
+
+            mainLanguageCode = getLanguageCode(binding.mainLanguage.text.toString())
+            toLanguageCode = getLanguageCode(binding.toLanguage.text.toString())
+
+            if (binding.sourceText.text.toString() != ""){
+                binding.sourceText.setText(resultText.text.toString())
+                translate(mainLanguageCode,toLanguageCode, resultText.text.toString())
+                binding.resultText.visibility = View.VISIBLE
             }
-            override fun onNothingSelected(p0: AdapterView<*>?) {}
+
         }
-
-        val mainLanguageAdapter = ArrayAdapter(context!!,R.layout.spinner_item,fromLanguageList)
-        mainLanguageAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        mainLanguageSpinner.adapter = mainLanguageAdapter
-
-        //Çevrilecek dil seçim işlemi
-        toLanguageSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                toLanguageCode = getLanguageCode(toLanguageList[p2])
-            }
-
-            override fun onNothingSelected(p0: AdapterView<*>?) {
-                TODO("Not yet implemented")
-            }
-        }
-
-        val toLanguageAdapter = ArrayAdapter(context!!,R.layout.spinner_item,toLanguageList)
-        toLanguageAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        toLanguageSpinner.adapter = toLanguageAdapter
 
         translateButton.setOnClickListener {
             if(sourceText.text.toString().isEmpty()){
@@ -115,6 +106,10 @@ class HomeFragment : Fragment() {
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 //Çeviri işlemi yapılır
                 if (binding.sourceText.text.toString() != ""){
+
+                    mainLanguageCode = getLanguageCode(binding.mainLanguage.text.toString())
+                    toLanguageCode = getLanguageCode(binding.toLanguage.text.toString())
+
                     translate(mainLanguageCode,toLanguageCode, p0.toString())
                     binding.resultText.visibility = View.VISIBLE
                 }
@@ -137,12 +132,12 @@ class HomeFragment : Fragment() {
             }
         }
 
-        binding.changeVertical?.setOnClickListener {
-            changeLanguage()
+        binding.mainLanguage.setOnClickListener {
+            getBottomSheetLayout(binding.mainLanguage)
         }
 
-        binding.changeHorizontal.setOnClickListener {
-            changeLanguage()
+        binding.toLanguage.setOnClickListener {
+            getBottomSheetLayout(binding.toLanguage)
         }
 
         return root
@@ -186,47 +181,20 @@ class HomeFragment : Fragment() {
         var languageCode = 0
         if (language == "Türkçe") {
             languageCode = FirebaseTranslateLanguage.TR
-        }else if(language == "İngilizce"){
+        }else if(language == "English"){
             languageCode = FirebaseTranslateLanguage.EN
-        }else if(language == "Arapça"){
-            languageCode = FirebaseTranslateLanguage.AR
-        }else if(language == "Fransızca"){
+        }else if(language == "Français"){
             languageCode = FirebaseTranslateLanguage.FR
-        }else if(language == "Almanca"){
+        }else if(language == "Deutsch"){
             languageCode = FirebaseTranslateLanguage.DE
-        }else if(language == "İspanyolca"){
+        }else if(language == "Español"){
             languageCode = FirebaseTranslateLanguage.ES
-        }else if(language == "Rusça"){
+        }else if(language == "Русский"){
             languageCode = FirebaseTranslateLanguage.RU
         }else{
             languageCode = FirebaseTranslateLanguage.HI
         }
         return languageCode
-    }
-
-    private fun changeLanguage(){
-        val selectedMainLanguage = binding.mainLangue.selectedItem
-        val selectedMainPosition = binding.mainLangue.selectedItemPosition
-        val selectedToLanguage = binding.toLangue.selectedItem
-        val selectedToLanguagePosition = binding.toLangue.selectedItemPosition
-
-        binding.mainLanguage?.setText(selectedToLanguage.toString())
-        mainLanguageCode = getLanguageCode(selectedToLanguage.toString())
-        toLanguageCode = getLanguageCode(selectedMainLanguage.toString())
-
-        if(sourceText.text.toString().isEmpty()){
-            Toast.makeText(context,"Lütfen Metin Girin", Toast.LENGTH_SHORT).show()
-        }else if(mainLanguageCode == 0){
-            Toast.makeText(context,"Çevrilecek dili seçin!",Toast.LENGTH_SHORT).show()
-        }else if(toLanguageCode == 0){
-            Toast.makeText(context,"Çevirmek istediğiniz dili seçin!",Toast.LENGTH_SHORT).show()
-        }else{
-            binding.sourceText.text = resultText.text
-            translate(mainLanguageCode,toLanguageCode, binding.sourceText.text.toString())
-        }
-
-        binding.mainLangue.setSelection(selectedToLanguagePosition)
-        binding.toLangue.setSelection(selectedMainPosition)
     }
 
     private fun saveToFirestore(){
@@ -241,5 +209,60 @@ class HomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun getBottomSheetLayout( textView: TextView ){
+        val dialog = Dialog(requireContext())
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setContentView(R.layout.bottom_sheet_languages)
+
+        val turkey = dialog.findViewById<LinearLayout>(R.id.turkey)
+        val english = dialog.findViewById<LinearLayout>(R.id.england)
+        val spain = dialog.findViewById<LinearLayout>(R.id.spain)
+        val russia = dialog.findViewById<LinearLayout>(R.id.russia)
+        val france = dialog.findViewById<LinearLayout>(R.id.france)
+        val germany = dialog.findViewById<LinearLayout>(R.id.germany)
+        val chinese = dialog.findViewById<LinearLayout>(R.id.chinese)
+
+        english.setOnClickListener {
+            textView.setText("English")
+            dialog.hide()
+        }
+
+        turkey.setOnClickListener {
+            textView.setText("Türkçe")
+            dialog.hide()
+        }
+
+        spain.setOnClickListener {
+            textView.setText("Español")
+            dialog.hide()
+        }
+
+        russia.setOnClickListener {
+            textView.setText("Русский")
+            dialog.hide()
+        }
+
+        france.setOnClickListener {
+            textView.setText("Français")
+            dialog.hide()
+        }
+
+        germany.setOnClickListener {
+            textView.setText("Deutsch")
+            dialog.hide()
+        }
+
+        chinese.setOnClickListener {
+            textView.setText("中国人")
+            dialog.hide()
+        }
+
+        dialog.show()
+        dialog.window!!.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.window!!.attributes.windowAnimations = R.style.DialogAnimation
+        dialog.window!!.setGravity(Gravity.BOTTOM)
     }
 }

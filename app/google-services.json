@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1061749824220",
+    "project_id": "translate-32d2d",
+    "storage_bucket": "translate-32d2d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1061749824220:android:c4f4256f8b978eb3b13219",
+        "android_client_info": {
+          "package_name": "com.example.navigationdrawer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1061749824220-h5816ug6jk5k8eoghqtt56mlra9nocqq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABV4jktnLvWfWWa8_w2Lr-qjQVhnmeAaA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1061749824220-h5816ug6jk5k8eoghqtt56mlra9nocqq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

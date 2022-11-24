@@ -25,14 +25,14 @@
             android:layout_weight="1.2"/>
 
         <ImageView
-            android:id="@+id/changeHorizontal"
+            android:id="@+id/changeLanguage"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.6"
             android:src="@drawable/ic_compare_arrow"/>
 
-        <Spinner
-            android:id="@+id/toLangue"
+        <TextView
+            android:id="@+id/toLanguage"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1.2"
